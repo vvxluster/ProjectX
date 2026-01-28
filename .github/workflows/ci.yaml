@@ -1,0 +1,21 @@
+name: Sample Code Execution
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build-and-run:
+    runs-on: [self-hosted, gh-keda-runner]  # ← Must be array format!
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Run a greeting
+        run: |
+          echo "Hello from GitHub Actions!"
+          echo "The runner architecture is: $(uname -m)"
+          echo "Runner name: $RUNNER_NAME"
+          echo "✅ Job completed successfully!"
