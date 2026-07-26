@@ -1,0 +1,42 @@
+Im trying to modernize the CD onboard intake requests: 
+Design: Portal made out of backstage (backend written in TS) and google ADK agent together
+
+Agenda:
+I need to make POC complete that, How my design works and benefit by incorporating the current flow. and after proving it need to incorparate easily
+
+High-Brief:
+	As a design part from forms we will use Portal + google ADK agent, 
+	1. It needs to have ability to connect and get the information SNOW (SDLC-CI)from table_API (currenty Portal can do that), not sure from checkmarx, nexusiq, prissma Portal can gather my information.
+	2. Check whatever information it does need to generate the report 
+	3. Generate report, and add the information of everything from the report and save it in a excel sheet/ confluence (high-risk) later we can edit it manually if it is approved or not that csv sheet / confluence page. Drop a mail to us, we will just forward the same mail on weekly CAB meeting we will meet with David Groves and if it approvable we will ask it to approve it along with Repo owners
+
+Dividing the work:
+ What Portal DO:
+	 1. since its already connected to SNOW, maybe with other required tools it can get some information required. 
+	 2. Accumulate information and passes to AGENT
+	 3. Before the agent fully develop maybe we can check if we can get mail or notification that CD request has been raised [Not highly required as later agent api (using python code not using LLM) will do the same]
+	 4. It should take multiple repos within the single Project 
+ What Agent DO:
+	 1. Generate a report using the information coming from Portal.
+	 2. Do additional checks within its capabilties
+	 3. update the CSV file/ conflunece page or create a new confluence page. So that we can approve it
+	 4. Update notifications to us, along with report
+
+TODO, Capabilties check and Limitations: Portal + google ADK with python 
+ Agent:
+ 1. Is this API agent using python can take information using any json or however the information comes to it, or else building this would be waste.
+ 2. Do we need to host this agent in its own namespace
+ 3. Need to create on-demand agent, how can we do that?
+
+
+ Portal:
+ 1. How portal would give the information to agent API (using python code not using LLM)
+ 2. how the portal creates the object (JSON or any object) or do we need to make portal do that
+ 3. Need to update both Portal (to be compaitable with agent)and Portal-templates (For CD input request template)
+
+More Deep Brief:
+	1. Portal is hosting on our k8s cluster but with in its own namespace. 
+	2. Agent should have its own namespaces, portal's information should pass to Agent namespace
+	3. How can we create On-demand agent how?
+	4. How can agent do the assessment do we need to provide the information already in python code or how?
+	5. Agent only creates a human readable and acts a proof that RE can approve it or not. So that RE can go with that information and do the basic sanity from his side and go to CAB meeting 
