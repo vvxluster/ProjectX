@@ -8,7 +8,7 @@ High-Brief:
 	As a design part from forms we will use Portal + google ADK agent, 
 	1. It needs to have ability to connect and get the information SNOW (SDLC-CI)from table_API (currenty Portal can do that), not sure from checkmarx, nexusiq, prissma Portal can gather my information.
 	2. Check whatever information it does need to generate the report 
-	3. Generate report, and add the information of everything from the report and save it in a excel sheet/ confluence (high-risk) later we can edit it manually if it is approved or not that csv sheet / confluence page. Drop a mail to us, we will just forward the same mail on weekly CAB meeting we will meet with David Groves and if it approvable we will ask it to approve it along with Repo owners
+	3. Generate report, and add the information of everything from the report and save it in a excel sheet/ confluence (high-risk) later we can edit it manually if it is approved or not that csv sheet / confluence page. Drop a mail to us, we will just forward the same mail on weekly CAB meeting we will meet with CHANGE MANAGEMENT TEAM and if it approvable we will ask it to approve it along with Repo owners
 
 Dividing the work:
  What Portal DO:
